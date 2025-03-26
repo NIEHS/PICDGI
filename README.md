@@ -10,4 +10,23 @@ $~~$
 
 **Applied to LUAD scRNA-seq data, PICDGI identified top-ranked CDGs, with 62% overlapping known OGs and TSGs, while 38% are novel candidates. Compared to Moran’s I test in Monocle3, PICDGI-identified genes showed higher expression, reinforcing their role in tumor growth. By capturing gene expression dynamics and interactions, PICDGI offers insights into potential therapeutic targets for personalized cancer treatment.**
 
+$~~$
+
+# Overview to PICDGI framework
+
 ![](Figure/github.png)
+
+**A.** Processed scRNA-seq expression matrices from different cancer progression stages.
+**B.** Normalized and dimension-reduced scRNA-seq data for cell type identification.
+**C.** Annotated cell types, including immune cells, cancer cells, and others, for biological interpretation.
+**D.** Potential gene-gene interactions driving cancer evolution. The left and right plots depict interactions at early and advanced stages, respectively. 
+**E.** Time-series gene expression data of cell types from cancer patients at three time points, capturing successive cancer progression stages.
+**F.** Gene Interaction Effects (GIE) contributing to genetic heterogeneity, reflecting statistical variability in interactions.
+**G.** Computational model linking time-series gene expression to local (gene mutation) and global (Gene Interaction Effect) hidden variables in cancer evolution.
+**H.** The effect of a gene on mutating another is quantified via the HDI of the posterior probability density function, considering gene-gene interactions and time-series gene expression.
+
+
+
+
+
+
