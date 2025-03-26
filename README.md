@@ -16,14 +16,14 @@ $~~$
 
 ![](Figure/github.png)
 
-**A.** Processed scRNA-seq expression matrices from different cancer progression stages.
-**B.** Normalized and dimension-reduced scRNA-seq data for cell type identification.
-**C.** Annotated cell types, including immune cells, cancer cells, and others, for biological interpretation.
-**D.** Potential gene-gene interactions driving cancer evolution. The left and right plots depict interactions at early and advanced stages, respectively. 
-**E.** Time-series gene expression data of cell types from cancer patients at three time points, capturing successive cancer progression stages.
-**F.** Gene Interaction Effects (GIE) contributing to genetic heterogeneity, reflecting statistical variability in interactions.
-**G.** Computational model linking time-series gene expression to local (gene mutation) and global (Gene Interaction Effect) hidden variables in cancer evolution.
-**H.** The effect of a gene on mutating another is quantified via the HDI of the posterior probability density function, considering gene-gene interactions and time-series gene expression.
+**A.** Processed scRNA-seq expression matrices from different cancer progression stages.<br>
+**B.** Normalized and dimension-reduced scRNA-seq data for cell type identification.<br>
+**C.** Annotated cell types, including immune cells, cancer cells, and others, for biological interpretation.<br>
+**D.** Potential gene-gene interactions driving cancer evolution. The left and right plots depict interactions at early and advanced stages, respectively. <br>
+**E.** Time-series gene expression data of cell types from cancer patients at three time points, capturing successive cancer progression stages.<br>
+**F.** Gene Interaction Effects (GIE) contributing to genetic heterogeneity, reflecting statistical variability in interactions.<br>
+**G.** Computational model linking time-series gene expression to local (gene mutation) and global (Gene Interaction Effect) hidden variables in cancer evolution.<br>
+**H.** The effect of a gene on mutating another is quantified via the HDI of the posterior probability density function, considering gene-gene interactions and time-series gene expression.<br>
 
 
 
