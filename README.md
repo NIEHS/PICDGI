@@ -39,9 +39,9 @@ $~~$
 
 **Step 5:** PICDGI calculates the gene driver coefficient as the highest density interval (HDI) of the posterior probability density function, which represents the range of the most probable true gene effects on other genes.
 
+$~~$
 
-
-
+# Run PICDGI
 
 
 
