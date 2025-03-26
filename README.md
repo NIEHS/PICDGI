@@ -43,5 +43,8 @@ $~~$
 
 # Run PICDGI
 
+**R Packages**<br>
+libs <- c("MASS", "tidyr", "dplyr", "caret", "viridis", "magrittr", "plyr")<br>
+lapply(libs, library, character.only=TRUE)<br>
 
 
