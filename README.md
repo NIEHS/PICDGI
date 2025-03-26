@@ -25,6 +25,21 @@ $~~$
 **G.** Computational model linking time-series gene expression to local (gene mutation) and global (Gene Interaction Effect) hidden variables in cancer evolution.<br>
 **H.** The effect of a gene on mutating another is quantified via the HDI of the posterior probability density function, considering gene-gene interactions and time-series gene expression.<br>
 
+$~~$
+
+# Steps in the PICDGI Framework for Identifying Cancer Driver Genes
+
+**Step 1:** PICDGI calculates the average expression level of each gene across all cells within each cluster at different time points corresponding to the scRNA-seq data collection. This generates a pseudo-time-series gene expression dataset with dimensions N × T × C, where N represents the number of genes, T the number of time points, and C the number of clusters.
+
+**Step 2:** PICDGI determines the cancer cell fraction within each cell to identify cancer progenitor cells using appropriate markers.
+
+**Step 3:** PICDGI models gene mutation dynamics using a time-varying Autoregressive Moving Average (ARMA) process. 
+
+**Step 4:** PICDGI applies Bayes' theorem along with variational Bayesian inference to estimate the probability density function that captures gene mutation dynamics during cancer progression, accounting for gene interactions.
+
+**Step 5:** PICDGI calculates the gene driver coefficient as the highest density interval (HDI) of the posterior probability density function, which represents the range of the most probable true gene effects on other genes.
+
+
 
 
 
