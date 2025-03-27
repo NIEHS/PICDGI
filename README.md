@@ -38,4 +38,36 @@ $~~$
 libs <- c("MASS", "tidyr", "dplyr", "caret", "viridis", "magrittr", "plyr")<br>
 lapply(libs, library, character.only=TRUE)<br>
 
+########<br>
+######## load time series data of the cancer progenitor cells (epithelial cell)<br>
+########<br>
+load("dataset/epithelial.level.time1.rdata")<br>
+load("dataset/epithelial.level.time2.rdata")<br>
+load("dataset/epithelial.level.time3.rdata")<br>
+
+########<br>
+########load genes id<br>
+########<br>
+load("gene.id.rdata")<br>
+
+########<br>
+######## call picdgi function<br>
+########<br>
+source("function/picdgi_atitey.R")<br>
+epithelial.gene.level <- cbind(epithelial.level.time1$level_1, epithelial.level.time2$level_2, epithelial.level.time3$level_3)<br>
+epithelial.gene.level <- data.frame(epithelial.gene.level)<br>
+
+epithelial.gene <- lapply(1:dim(epithelial.gene.level)[1], function(w) {picdgi_atitey(epithelial.gene.level[w,])}) <br>
+dr.coef <- sapply(1:dim(epithelial.gene.level)[1], function(m) {epithelial.gene[[m]]$driver.effect})<br>
+
+gene.dr <- cbind(gene.id[1:5,], dr.coef)<br>
+colnames(gene.dr) <- c("gene_id", "coef_dr")<br>
+gene.dr <- data.frame(gene.dr)<br>
+
+########<br>
+######## order genes in decreasing order of their coefficient drivers<br>
+########<br>
+gene.dr <- gene.dr[order(gene.dr$coef_dr, decreasing = TRUE), ]<br>
+
+
 
