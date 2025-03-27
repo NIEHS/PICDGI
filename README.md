@@ -12,32 +12,23 @@ $~~$
 
 $~~$
 
-# Overview to PICDGI framework
-
-![](Figure/github.png)
-
-**A.** Processed scRNA-seq expression matrices from different cancer progression stages.<br>
-**B.** Normalized and dimension-reduced scRNA-seq data for cell type identification.<br>
-**C.** Annotated cell types, including immune cells, cancer cells, and others, for biological interpretation.<br>
-**D.** Potential gene-gene interactions driving cancer evolution. The left and right plots depict interactions at early and advanced stages, respectively. <br>
-**E.** Time-series gene expression data of cell types from cancer patients at three time points, capturing successive cancer progression stages.<br>
-**F.** Gene Interaction Effects (GIE) contributing to genetic heterogeneity, reflecting statistical variability in interactions.<br>
-**G.** Computational model linking time-series gene expression to local (gene mutation) and global (Gene Interaction Effect) hidden variables in cancer evolution.<br>
-**H.** The effect of a gene on mutating another is quantified via the HDI of the posterior probability density function, considering gene-gene interactions and time-series gene expression.<br>
-
-$~~$
-
 # Steps in the PICDGI Framework for Identifying Cancer Driver Genes
 
-**Step 1:** PICDGI calculates the average expression level of each gene across all cells within each cluster at different time points corresponding to the scRNA-seq data collection. This generates a pseudo-time-series gene expression dataset with dimensions N × T × C, where N represents the number of genes, T the number of time points, and C the number of clusters.
+**Computational objective:** Model the impact of gene interactions on other genes in driving cancer progression in patients.
 
-**Step 2:** PICDGI determines the cancer cell fraction within each cell to identify cancer progenitor cells using appropriate markers.
+![](Figure/github_2.png)
 
-**Step 3:** PICDGI models gene mutation dynamics using a time-varying Autoregressive Moving Average (ARMA) process. 
+**Step 1:** PICDGI calculates the average expression level of each gene across all cells within each cluster at different time points corresponding to the scRNA-seq data collection. This generates a pseudo-time-series gene expression dataset with dimensions N × T × C, where N represents the number of genes, T the number of time points, and C the number of clusters. Then PICDGI determines the cancer cell fraction within each cell to identify cancer progenitor cells using appropriate markers.
 
-**Step 4:** PICDGI applies Bayes' theorem along with variational Bayesian inference to estimate the probability density function that captures gene mutation dynamics during cancer progression, accounting for gene interactions.
+![](Figure/github_1.png)
 
-**Step 5:** PICDGI calculates the gene driver coefficient as the highest density interval (HDI) of the posterior probability density function, which represents the range of the most probable true gene effects on other genes.
+**Step 2:** PICDGI models gene mutation dynamics using a time-varying Autoregressive Moving Average (ARMA) process. 
+
+**Step 3:** PICDGI applies Bayes' theorem along with variational Bayesian inference to estimate the probability density function that captures gene mutation dynamics during cancer progression, accounting for gene interactions.
+
+**Step 4:** PICDGI calculates the gene driver coefficient as the highest density interval (HDI) of the posterior probability density function, which represents the range of the most probable true gene effects on other genes.
+
+![](Figure/github_3.png)
 
 $~~$
 
